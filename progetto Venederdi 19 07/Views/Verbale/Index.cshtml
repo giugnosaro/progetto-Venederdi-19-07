@@ -1,0 +1,52 @@
+﻿@model List<progetto_Venederdi_19_07.ViewModels.VerbaleViewModel>
+
+@{
+    ViewBag.Title = "Elenco Verbali";
+}
+
+<link href="~/css/Verbali.css" rel="stylesheet" />
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    <a asp-action="NuovoVerbale" id="crea">Crea Verbale</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Descrizione</th>
+            <th>Totale Verbali</th>
+            <th>ID Verbale</th>
+            <th>ID Utente</th>
+            <th>ID Violazione</th>
+            <th>Data Violazione</th>
+            <th>Indirizzo Violazione</th>
+            <th>Nominativo Agente</th>
+            <th>Data Trascrizione Verbale</th>
+            <th>Importo</th>
+            <th>Decurtamento Punti</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.Cognome</td>
+            <td>@item.Descrizione</td>
+            <td>@item.TotVerbali</td>
+            <td>@item.IdVerbale</td>
+            <td>@item.IdUtente</td>
+            <td>@item.IdViolazione</td>
+            <td>@item.DataViolazione.ToString("dd/MM/yyyy")</td>
+            <td>@item.IndirizzoViolazione</td>
+            <td>@item.Nominativo_Agente</td>
+            <td>@item.DataTrascrizioneVerbale</td>
+            <td>@item.Importo.ToString("C")</td>
+            <td>@item.DecurtamentoPunti</td>
+        </tr>
+    }
+    </tbody>
+</table>

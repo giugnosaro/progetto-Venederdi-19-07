@@ -1,0 +1,83 @@
+﻿@model progetto_Venederdi_19_07.Verbale
+
+@{
+    ViewData["Title"] = "NuovoVerbale";
+}
+
+
+<h1>NuovoVerbale</h1>
+
+<h4>Verbale</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="NuovoVerbale">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdUtente" class="control-label"></label>
+                <select asp-for="IdUtente" class="form-select">
+                    <option value="">Seleziona un utente</option>
+                    @foreach (var item in ViewBag.Utenti)
+                    {
+                        <option value="@item.IdAnagrafica">@item.Cognome</option>
+                    }
+                </select>
+                <span asp-validation-for="IdUtente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdViolazione" class="control-label"></label>
+                <select asp-for="IdViolazione" class="form-select">
+                    <option value="">Seleziona una violazione</option>
+                    @foreach (var item in ViewBag.Violazioni)
+                    {
+                        <option value="@item.IdViolazione">@item.Descrizione</option>
+                    }
+                </select>
+                <span asp-validation-for="IdViolazione" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataViolazione" class="control-label"></label>
+                <input asp-for="DataViolazione" class="form-control" />
+                <span asp-validation-for="DataViolazione" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndirizzoViolazione" class="control-label"></label>
+                <input asp-for="IndirizzoViolazione" class="form-control" />
+                <span asp-validation-for="IndirizzoViolazione" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nominativo_Agente" class="control-label"></label>
+                <input asp-for="Nominativo_Agente" class="form-control" />
+                <span asp-validation-for="Nominativo_Agente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataTrascrizioneVerbale" class="control-label"></label>
+                <input asp-for="DataTrascrizioneVerbale" class="form-control" />
+                <span asp-validation-for="DataTrascrizioneVerbale" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Importo" class="control-label"></label>
+                <input asp-for="Importo" class="form-control" />
+                <span asp-validation-for="Importo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DecurtamentoPunti" class="control-label"></label>
+                <input asp-for="DecurtamentoPunti" class="form-control" />
+                <span asp-validation-for="DecurtamentoPunti" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

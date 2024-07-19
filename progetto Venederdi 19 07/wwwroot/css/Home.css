@@ -1,0 +1,15 @@
+﻿.jumbotron {
+    background-color: #f0f0f0;
+}
+
+.card {
+    margin-bottom: 20px;
+
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    max-height: 150px; /* Limita l'altezza massima dell'immagine */
+    object-fit: cover; /* Assicura che l'immagine riempia il contenitore */
+}

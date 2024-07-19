@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<link href="~/css/Menu.css" rel="stylesheet" />
+
+<div class="container back-office-container">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Totale Verbali</h5>
+                    <p class="card-text">Visualizza il totale dei verbali trascritti.</p>
+                    <a asp-action="TotVerbali" class="btn btn-primary btn-custom">Vai a Totale Verbali</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Totale Punti</h5>
+                    <p class="card-text">Visualizza il totale dei punti decurtati.</p>
+                    <a asp-action="TotPunti" class="btn btn-primary btn-custom">Vai a Totale Punti</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Totale Importi</h5>
+                    <p class="card-text">Visualizza il totale degli importi delle multe.</p>
+                    <a asp-action="TotImporti" class="btn btn-primary btn-custom">Vai a Totale Importi</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Totale Maggiore di 400$</h5>
+                    <p class="card-text">Visualizza il totale delle multe superiori a 400$.</p>
+                    <a asp-action="QuattroCentoEuro" class="btn btn-primary btn-custom">Vai a Totale Maggiore di 400$</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
